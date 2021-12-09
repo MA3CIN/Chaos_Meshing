@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: network-delay
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+      - "testowy-ns"
+    labelSelectors:
+      app: "testLabel"
+    podPhaseSelectors:
+      - "Running"
+  delay:
+    latency: 10ms
+  duration: "15s"
