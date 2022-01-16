@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: chaos
+  name: pod-kill
 
 ---
 apiVersion: v1
@@ -10,7 +10,7 @@ metadata:
   name: nginxservice
   labels:
     name: nginxservice
-  namespace: chaos
+  namespace: pod-kill
 spec:
   ports:
     - port: 80
@@ -23,7 +23,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: nginx
-  namespace: chaos
+  namespace: pod-kill
 spec:
   replicas: 3
   selector:
