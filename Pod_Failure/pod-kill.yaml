@@ -2,11 +2,11 @@ kind: PodChaos
 apiVersion: chaos-mesh.org/v1alpha1
 metadata:
   name: chaos-kill
-  namespace: chaos
+  namespace: pod-kill
 spec:
   selector:
     namespaces:
-      - chaos
+      - pod-kill
     labelSelectors:
       app: nginx
   mode: one
