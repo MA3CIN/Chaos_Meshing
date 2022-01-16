@@ -25,7 +25,7 @@ metadata:
   name: nginx
   namespace: pod-kill
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     app: nginx
   template:
