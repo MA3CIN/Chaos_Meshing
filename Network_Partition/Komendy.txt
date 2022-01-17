@@ -1,0 +1,3 @@
+create namespace network-chaos
+create deploy httpd --image=httpd --replicas=3 -n network-chaos
+get po -n network-chaos

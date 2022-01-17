@@ -1,7 +1,7 @@
 kind: PodChaos
 apiVersion: chaos-mesh.org/v1alpha1
 metadata:
-  name: chaos-kill
+  name: chaos-killv4
   namespace: pod-kill
 spec:
   selector:
@@ -9,9 +9,7 @@ spec:
       - pod-kill
     labelSelectors:
       app: nginx
-  mode: one
+  mode: all
   action: pod-kill
-  duration: 5m
+  duration: 150s
   gracePeriod: 0
-  scheduler:
-    cron: "@every 30s"
