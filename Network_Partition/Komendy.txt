@@ -1,6 +1,6 @@
-create namespace network-chaos
-create deploy httpd --image=httpd --replicas=3 -n network-chaos
-get po -n network-chaos
+kubectl create namespace network-chaos
+kubectl create deploy httpd --image=httpd --replicas=3 -n network-chaos
+kubectl get po -n network-chaos
 kubectl expose deploy httpd --port=80 -n network-chaos
 kubectl create deploy nginx --image=nginx --replicas=1
 kubectl create namespace nginx
