@@ -6,12 +6,16 @@ spec:
   action: partition
   mode: all
   selector:
+    namespaces:
+      - nginx
     labelSelectors:
       "app": "nginx"
   direction: to
   target:
     selector:
+      namespaces:
+        - network-chaos
       labelSelectors:
         "app": "httpd"
     mode: all
-  duration: "50s"
+  duration: "60s"
