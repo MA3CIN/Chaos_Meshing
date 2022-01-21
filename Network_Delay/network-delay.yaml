@@ -10,15 +10,7 @@ spec:
       - nginx
     labelSelectors:
       "app": "nginx"
-  direction: to
-  target:
-    selector:
-      namespaces:
-        - network-chaos
-      labelSelectors:
-        "app": "httpd"
-    mode: all
   duration: "80s"
   delay:
-    latency: 25ms
+    latency: 50ms
   duration: "60s"
