@@ -3,7 +3,7 @@ kind: NetworkChaos
 metadata:
   name: network-delay
 spec:
-  action: partition
+  action: delay
   mode: all
   selector:
     namespaces:
