@@ -3,15 +3,22 @@ kind: NetworkChaos
 metadata:
   name: network-delay
 spec:
-  action: delay
-  mode: one
+  action: partition
+  mode: all
   selector:
     namespaces:
-      - "testowy-ns"
+      - nginx
     labelSelectors:
-      app: "testLabel"
-    podPhaseSelectors:
-      - "Running"
+      "app": "nginx"
+  direction: to
+  target:
+    selector:
+      namespaces:
+        - network-chaos
+      labelSelectors:
+        "app": "httpd"
+    mode: all
+  duration: "80s"
   delay:
-    latency: 10ms
-  duration: "15s"
+    latency: 25ms
+  duration: "60s"
