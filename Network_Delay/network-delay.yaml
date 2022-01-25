@@ -1,16 +1,18 @@
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
-  name: network-delay
+  name: my-network-delayv3
 spec:
   action: delay
-  mode: all
+  mode: one
   selector:
     namespaces:
       - nginx
-    labelSelectors:
-      "app": "nginx"
-  duration: "80s"
   delay:
-    latency: 50ms
-  duration: "60s"
+    latency: 500ms
+  direction: to
+  externalTargets:
+    - "172.17.0.6"
+    - "172.17.0.8"
+    - "172.17.0.4"
+  duration: "30s"
