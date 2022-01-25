@@ -1,0 +1,13 @@
+kubectl run nginx --image=nginx --labels="app=nginx" --port=80
+
+kubectl get pods nginx -ojsonpath="{.status.podIP}"
+
+kubectl run -it test-connection --image=radial/busyboxplus:curl -- sh  
+ +++
+ping <IP of the Nginx Pod> -c 2
+
+
+
+
+
+https://shardul.dev/cloud-native-chaos-engineering-with-chaos-mesh/?fbclid=IwAR2JGWjYeqed4C8_kCSFX4VmRxG18SxM-MxL8EHeBYpta6FMCGzGel1clKw
