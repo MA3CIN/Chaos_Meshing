@@ -8,12 +8,16 @@ spec:
   selector:
     namespaces:
       - network-chaos
+    labelSelectors:
+      app: httpd
   delay:
     latency: 2s
   direction: to
   target:
     selector:
       namespaces:
-        - nginx
+        - default
+      labelSelectors:
+        app: nginx
     mode: one
   duration: "90s"
