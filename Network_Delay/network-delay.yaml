@@ -1,7 +1,7 @@
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
-  name: my-network-delay
+  name: my-network-delayv2
 spec:
   action: delay
   mode: one
@@ -16,4 +16,4 @@ spec:
       namespaces:
         - nginx
     mode: one
-  duration: "30s"
+  duration: "90s"
