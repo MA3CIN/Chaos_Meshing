@@ -16,7 +16,7 @@ spec:
   target:
     selector:
       namespaces:
-        - default
+        - nginx
       labelSelectors:
         app: nginx
     mode: one
