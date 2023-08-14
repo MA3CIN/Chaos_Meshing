@@ -1,2 +1,2 @@
 # Chaos_Meshing
-K8s
+Sample Chaos Experiments described in yaml files, fully KRM compatible.
